@@ -3,6 +3,8 @@ const multer = require('multer');
 const {sendEmail} = require('./sendEmail');
 const {sendContactEmail} = require('./sendEmail');
 const {sendContact} = require('./sendEmail');
+const {sendService} = require('./sendEmail');
+
 
 const cors = require('cors');
 const app = express();

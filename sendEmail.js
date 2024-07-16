@@ -151,8 +151,8 @@ const sendContactEmail = async (firstName, lastName, email,phone,subject,company
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone Number:</strong> ${phone}</p>
         <p><strong>Company:</strong> ${company}</p>
-        <p><strong>message:</strong> ${message}</p>
-        <p><strong>countryCode:</strong> ${countryCode}</p>
+        <p><strong>Message:</strong> ${message}</p>
+        <p><strong>CountryCode:</strong> ${countryCode}</p>
       </div>
       <div class="footer">
         <p>Thank you for contacting us!</p>
@@ -233,8 +233,8 @@ const sendContactEmail = async (firstName, lastName, email,phone,subject,company
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone Number:</strong> ${phone}</p>
         <p><strong>Service:</strong> ${service}</p>
-        <p><strong>message:</strong> ${message}</p>
-        <p><strong>countryCode:</strong> ${country}</p>
+        <p><strong>Message:</strong> ${message}</p>
+        <p><strong>CountryCode:</strong> ${country}</p>
       </div>
       <div class="footer">
         <p>Thank you for contacting us!</p>
@@ -308,16 +308,16 @@ const sendContactEmail = async (firstName, lastName, email,phone,subject,company
   <body>
     <div class="container">
       <div class="header">
-        <h1>Contact Information</h1>
+        <h1>Service Information</h1>
       </div>
       <div class="content">
        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>CompanyWebsite:</strong> ${companyWebsite}</p>
         <p><strong>Phone Number:</strong> ${phoneNumber}</p>
-        <p><strong>budget:</strong> ${budget}</p>
-        <p><strong>projectDetails:</strong> ${projectDetails}</p>
-          <p><strong>projectDetails:</strong> ${country}</p>
+        <p><strong>Budget:</strong> ${budget}</p>
+        <p><strong>Project Details:</strong> ${projectDetails}</p>
+          <p><strong>Country:</strong> ${country}</p>
       </div>
       <div class="footer">
         <p>Thank you for contacting us!</p>
