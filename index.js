@@ -34,7 +34,7 @@ app.post('/send-email', upload.single('attachment'), async (req, res) => {
   const { name, email, phoneNumber, experience , type } = req.body;
   const attachment = req.file;
 
-  if (!to  || !attachment) {
+  if (!attachment) {
     return res.status(400).send('Missing required fields');
   }
 
