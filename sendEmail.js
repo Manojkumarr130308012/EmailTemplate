@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-const sendEmail = async (subject,name,email,phoneNumber,experience, attachment) => {
+const sendEmail = async (subject,name,email,phoneNumber,experience,job,attachment) => {
   try {
     // Create a transporter object
     let transporter = nodemailer.createTransport({
@@ -59,6 +59,7 @@ const sendEmail = async (subject,name,email,phoneNumber,experience, attachment) 
       <h1>Contact Information</h1>
     </div>
     <div class="content">
+     <p><strong>Job Tittle:</strong> ${job}</p>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone Number:</strong> ${phoneNumber}</p>

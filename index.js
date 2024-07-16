@@ -31,7 +31,7 @@ app.use(express.json());
 
 // API endpoint to send email
 app.post('/send-email', upload.single('attachment'), async (req, res) => {
-  const { name, email, phoneNumber, experience , type } = req.body;
+  const { name, email, phoneNumber, experience,type,job } = req.body;
   const attachment = req.file;
 
   if (!attachment) {
@@ -40,8 +40,9 @@ app.post('/send-email', upload.single('attachment'), async (req, res) => {
 
   try {
    
-    await sendEmail("Carrier", name, email, phoneNumber, experience, attachment);
-    
+    if (type === "Carrier") {
+    await sendEmail("Carrier", name, email, phoneNumber, experience,job,attachment);
+    }
     res.status(200).send('Email sent successfully');
   } catch (error) {
     console.error('Error sending email:', error);
