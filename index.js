@@ -1,6 +1,9 @@
 const express = require('express');
 const multer = require('multer');
 const sendEmail = require('./sendEmail');
+const sendContactEmail = require('./sendEmail');
+const sendContact = require('./sendEmail');
+
 const cors = require('cors');
 const app = express();
 const port = 3000;
@@ -35,20 +38,56 @@ app.post('/send-email', upload.single('attachment'), async (req, res) => {
   const attachment = req.file;
 
   if (!attachment) {
-    return res.status(400).send('Missing required fields');
-  }
+      return res.status(400).send('Missing required fields');
+    }
 
   try {
-   
-    if (type === "Carrier") {
     await sendEmail("Carrier", name, email, phoneNumber, experience,job,attachment);
-    }
     res.status(200).send('Email sent successfully');
   } catch (error) {
     console.error('Error sending email:', error);
     res.status(500).send('Error sending email');
   }
 });
+
+
+app.post('/send/contactemail', async (req, res) => {
+    const { firstName, lastName, email,phone,subject,company,message,countryCode } = req.body;
+    //Contact Form
+    try {
+      await sendContactEmail(firstName, lastName, email,phone,subject,company,message,countryCode);
+      res.status(200).send('Email sent successfully');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      res.status(500).send('Error sending email');
+    }
+  });
+
+
+  app.post('/send/contact', async (req, res) => {
+    const { firstName, email, phone,service,message,country } = req.body;
+    //Contact Form
+    try {
+      await sendContact(firstName, email, phone,service,message,country);
+      res.status(200).send('Email sent successfully');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      res.status(500).send('Error sending email');
+    }
+  });
+
+
+  app.post('/send/service', async (req, res) => {
+    const { name, email, companyWebsite,phoneNumber,budget,country,projectDetails } = req.body;
+    //Service
+    try {
+      await sendService(name, email, companyWebsite,phoneNumber,budget,country,projectDetails);
+      res.status(200).send('Email sent successfully');
+    } catch (error) {
+      console.error('Error sending email:', error);
+      res.status(500).send('Error sending email');
+    }
+  });
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
