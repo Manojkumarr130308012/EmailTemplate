@@ -31,15 +31,17 @@ app.use(express.json());
 
 // API endpoint to send email
 app.post('/send-email', upload.single('attachment'), async (req, res) => {
-  const { to, subject, name, email, phoneNumber, experience } = req.body;
+  const { name, email, phoneNumber, experience , type } = req.body;
   const attachment = req.file;
 
-  if (!to || !subject || !attachment) {
+  if (!to  || !attachment) {
     return res.status(400).send('Missing required fields');
   }
 
   try {
-    await sendEmail(to, subject, name, email, phoneNumber, experience, attachment);
+    if(type == "Carrier"){
+        await sendEmail(to, "Carrier", name, email, phoneNumber, experience, attachment);
+    }
     res.status(200).send('Email sent successfully');
   } catch (error) {
     console.error('Error sending email:', error);
