@@ -40,7 +40,7 @@ app.post('/send-email', upload.single('attachment'), async (req, res) => {
 
   try {
     if(type == "Carrier"){
-        await sendEmail(to, "Carrier", name, email, phoneNumber, experience, attachment);
+        await sendEmail("Carrier", name, email, phoneNumber, experience, attachment);
     }
     res.status(200).send('Email sent successfully');
   } catch (error) {
