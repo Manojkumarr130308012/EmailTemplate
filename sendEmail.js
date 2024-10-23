@@ -13,8 +13,8 @@ const sendEmail = async (subject,name,email,phoneNumber,experience,job,attachmen
 
     // Send mail with defined transport object
     let info = await transporter.sendMail({
-      from: 'Info@nplustechnologies.com', // Replace with your sender info
-      to: 'Info@nplustechnologies.com',
+      from: 'vikram.nplus@gmail.com', // Replace with your sender info
+      to: 'vikram.nplus@gmail.com',
       subject: 'Carrier',
       html: `
       <html>
