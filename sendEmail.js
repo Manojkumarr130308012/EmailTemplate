@@ -6,11 +6,11 @@ const sendEmail = async (subject,name,email,phoneNumber,experience,job,attachmen
     let transporter = nodemailer.createTransport({
       service:'gmail',
       auth: {
-        user: 'Info@nplustechnologies.com', // Replace with your email
-        pass: 'suhqtquezpwsubfa', // Replace with your email password
+        user: 'vikram.nplus@gmail.com', // Replace with your email
+        pass: 'stmkoresatjbrwpa', // Replace with your email password
       },
     });
-
+    // suhqtquezpwsubfa
     // Send mail with defined transport object
     let info = await transporter.sendMail({
       from: 'vikram.nplus@gmail.com', // Replace with your sender info
