@@ -74,9 +74,10 @@ const sendEmail = async (subject,name,email,phoneNumber,experience,job,attachmen
 </html>
     `,
       attachments: [
-        {
+       {
           filename: attachment.originalname,
-          path: attachment.path,
+          content: attachment.buffer, // Assuming you have the buffer
+          contentType: attachment.mimetype
         },
       ],
     });
