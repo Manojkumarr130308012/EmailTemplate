@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-
+ 
 const sendEmail = async (subject,name,email,phoneNumber,experience,job,attachment) => {
   try {
     // Create a transporter object
@@ -7,7 +7,7 @@ const sendEmail = async (subject,name,email,phoneNumber,experience,job,attachmen
       service:'gmail',
       auth: {
         user: 'Info@nplustechnologies.com', // Replace with your email
-        pass: 'suhqtquezpwsubfa', // Replace with your email password
+        pass: 'txzm myba zcdl rfaw', // Replace with your email password
       },
     });
     // suhqtquezpwsubfa
@@ -80,14 +80,14 @@ const sendEmail = async (subject,name,email,phoneNumber,experience,job,attachmen
         },
       ],
     });
-
+ 
     console.log('Message sent: %s', info.messageId);
   } catch (error) {
     console.error('Error sending email:', error);
   }
 };
-
-
+ 
+ 
 const sendContactEmail = async (firstName, lastName, email,phone,subject,company,message,countryCode) => {
     try {
       // Create a transporter object
@@ -98,7 +98,7 @@ const sendContactEmail = async (firstName, lastName, email,phone,subject,company
           pass: 'suhqtquezpwsubfa', // Replace with your email password
         },
       });
-  
+ 
       // Send mail with defined transport object
       let info = await transporter.sendMail({
         from: 'Info@nplustechnologies.com', // Replace with your sender info
@@ -163,14 +163,14 @@ const sendContactEmail = async (firstName, lastName, email,phone,subject,company
   </html>
       `
       });
-  
+ 
       console.log('Message sent: %s', info.messageId);
     } catch (error) {
       console.error('Error sending email:', error);
     }
   };
-
-
+ 
+ 
   const sendContact = async (firstName, email, phone,service,message,country) => {
     try {
       // Create a transporter object
@@ -181,7 +181,7 @@ const sendContactEmail = async (firstName, lastName, email,phone,subject,company
           pass: 'suhqtquezpwsubfa', // Replace with your email password
         },
       });
-  
+ 
       // Send mail with defined transport object
       let info = await transporter.sendMail({
         from: 'Info@nplustechnologies.com', // Replace with your sender info
@@ -245,14 +245,14 @@ const sendContactEmail = async (firstName, lastName, email,phone,subject,company
   </html>
       `
       });
-  
+ 
       console.log('Message sent: %s', info.messageId);
     } catch (error) {
       console.error('Error sending email:', error);
     }
   };
-
-
+ 
+ 
   const sendService = async (name, email, companyWebsite,phoneNumber,budget,country,projectDetails) => {
     try {
       // Create a transporter object
@@ -263,7 +263,7 @@ const sendContactEmail = async (firstName, lastName, email,phone,subject,company
           pass: 'suhqtquezpwsubfa', // Replace with your email password
         },
       });
-  
+ 
       // Send mail with defined transport object
       let info = await transporter.sendMail({
         from: 'Info@nplustechnologies.com', // Replace with your sender info
@@ -328,7 +328,7 @@ const sendContactEmail = async (firstName, lastName, email,phone,subject,company
   </html>
       `
       });
-  
+ 
       console.log('Message sent: %s', info.messageId);
     } catch (error) {
       console.error('Error sending email:', error);
