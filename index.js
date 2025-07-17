@@ -10,7 +10,7 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-const allowedOrigins = ['https://nplustechnologies.com', 'http://192.168.1.17:3000'];
+const allowedOrigins = ['https://www.nplustechnologies.com','https://nplustechnologies.com', 'http://192.168.1.17:3000'];
 
 const corsOptions = {
   origin: function (origin, callback) {
